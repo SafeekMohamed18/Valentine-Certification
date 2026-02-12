@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Love Story 💖</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Floating Hearts -->
+    <div class="bg-hearts-container"></div>
+
+    <!-- WhatsApp Creator Link -->
+    <a href="https://wa.me/94743773745" target="_blank" class="whatsapp-link" title="Thank the Creator">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Music Control -->
+    <button class="music-toggle" id="musicToggle">
+        <span class="music-icon">🔇</span>
+    </button>
+    <audio id="backgroundMusic" loop>
+        <source src="Until I Found You -Stephen Sanchez ft. Em Beihold (Lyric Video) - sydhslm.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Scene 1: Magical Book -->
+    <div class="scene active" id="bookScene">
+        <div class="book-container">
+            <div class="book" id="magicBook">
+                <div class="book-cover">
+                    <div class="book-title">Our Love Story</div>
+                    <div class="book-hearts">💖</div>
+                </div>
+            </div>
+            <p class="book-text">Tap to Open Our Love Story 💖</p>
+        </div>
+    </div>
+
+    <!-- Scene 2: Sender Name Input -->
+    <div class="scene" id="nameScene">
+        <div class="name-container">
+            <h1 class="scene-title">Your Name</h1>
+            <div class="input-group">
+                <label for="yourName">Enter Your Name</label>
+                <input type="text" id="yourName" placeholder="Your name">
+                <div class="heart-burst"></div>
+            </div>
+            <button class="btn-primary" id="namesSubmit">Create Share Link 💕</button>
+        </div>
+    </div>
+
+    <!-- Scene 2.5: Share URL -->
+    <div class="scene" id="shareScene">
+        <div class="share-container">
+            <h1 class="scene-title">Share Your Love 💖</h1>
+            <p class="share-instruction">Share this link with your Valentine!</p>
+            <div class="url-box">
+                <input type="text" id="shareUrl" readonly class="share-url-input">
+                <button class="btn-copy" id="copyBtn">Copy Link 📋</button>
+            </div>
+            <p class="share-info">They'll be able to add their name and download a certificate!</p>
+            <button class="btn-primary" id="startAgainBtn">Create Another Link 🔄</button>
+        </div>
+    </div>
+
+    <!-- Scene 3: Receiver Name Input (when accessing via shared URL) -->
+    <div class="scene" id="receiverScene">
+        <div class="name-container">
+            <h1 class="scene-title">Your Name</h1>
+            <p class="scene-subtitle">Complete the certificate</p>
+            <div class="input-group">
+                <label for="receiverName">Enter Your Name</label>
+                <input type="text" id="receiverName" placeholder="Your name">
+                <div class="heart-burst"></div>
+            </div>
+            <button class="btn-primary" id="receiverSubmit">Continue 💕</button>
+        </div>
+    </div>
+
+    <!-- Scene 3.5: Love Loader Game -->
+    <div class="scene" id="loveMeterScene">
+        <div class="love-meter-container">
+            <h1 class="scene-title">Fill the Love Meter! 💖</h1>
+            <p class="instruction">Tap the floating hearts to fill the loader</p>
+            <div class="meter-wrapper">
+                <div class="meter-bar">
+                    <div class="meter-fill" id="meterFill"></div>
+                </div>
+                <div class="meter-label">
+                    <span id="meterPercent">0</span>%
+                </div>
+            </div>
+            <div class="floating-hearts-clickable" id="clickableHearts"></div>
+        </div>
+    </div>
+    <div class="scene" id="questionScene">
+        <div class="question-container">
+            <h1 class="scene-title question-text">Will you be my Valentine?</h1>
+            <div class="buttons-container">
+                <button class="btn-yes" id="yesBtn">YES 💖</button>
+                <button class="btn-no" id="noBtn">NO</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scene 5: Celebration -->
+    <div class="scene" id="celebrationScene">
+        <div class="celebration-container">
+            <h1 class="celebration-title">You just made my Valentine's Day unforgettable 💖✨</h1>
+            <div class="confetti-container" id="confettiContainer"></div>
+            <div class="sparkles-container" id="sparklesContainer"></div>
+            <div class="hearts-explosion" id="heartsExplosion"></div>
+            <button class="btn-primary" id="continueBtn">Create Certificate 🎁</button>
+        </div>
+    </div>
+
+    <!-- Scene 6: Certificate -->
+    <div class="scene" id="certificateScene">
+        <div class="certificate-container">
+            <h1 class="scene-title">Your Valentine's Certificate</h1>
+            <canvas id="certificateCanvas" width="800" height="600"></canvas>
+            <div class="certificate-buttons">
+                <button class="btn-primary" id="downloadBtn">Download Certificate 💝</button>
+                <button class="btn-primary" id="restartBtn">Create Another 🔄</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
