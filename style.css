@@ -661,17 +661,18 @@ body {
 }
 
 .btn-copy {
-    padding: 12px 20px;
+    padding: 14px 28px;
     background: linear-gradient(135deg, #ff5e78, #d6336c);
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
     white-space: nowrap;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(214, 51, 108, 0.4);
+    transition: all 0.22s ease;
+    box-shadow: 0 6px 18px rgba(214, 51, 108, 0.42);
+    min-width: 160px;
 }
 
 .btn-copy:hover {
@@ -690,7 +691,13 @@ body {
 }
 
 #startAgainBtn {
-    width: 100%;
+    width: auto;
+    display: inline-block;
+    padding: 10px 16px;
+    font-size: 15px;
+    border-radius: 12px;
+    max-width: 260px;
+    margin: 0 auto;
 }
 
 /* Scene 6: Certificate */
