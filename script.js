@@ -151,10 +151,9 @@ function initScenes() {
     // Scene 4: Valentine Question
     document.getElementById('yesBtn').addEventListener('click', handleYes);
     const noBtn = document.getElementById('noBtn');
-    noBtn.addEventListener('mouseenter', moveNoButton);
-    noBtn.addEventListener('touchstart', (e) => {
+    noBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        moveNoButton();
+        handleNoClick();
     });
     
     // Scene 5: Celebration
@@ -270,21 +269,9 @@ function handleYes() {
     startCelebration();
 }
 
-function moveNoButton() {
-    const noBtn = document.getElementById('noBtn');
-    const container = document.querySelector('.buttons-container');
-    const containerRect = container.getBoundingClientRect();
-    const btnRect = noBtn.getBoundingClientRect();
-    
-    const maxX = containerRect.width - btnRect.width - 20;
-    const maxY = containerRect.height - btnRect.height - 20;
-    
-    const newX = Math.random() * maxX;
-    const newY = Math.random() * maxY;
-    
-    noBtn.style.position = 'absolute';
-    noBtn.style.left = newX + 'px';
-    noBtn.style.top = newY + 'px';
+function handleNoClick() {
+    const message = document.getElementById('escapeMessage');
+    message.classList.add('show');
 }
 
 // Scene 5: Celebration

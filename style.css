@@ -109,17 +109,20 @@ body {
 
 /* Scene Management */
 .scene {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     padding: 60px 0;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.6s ease;
     z-index: 1;
+    overflow-y: auto;
 }
 
 .scene.active {
@@ -293,6 +296,10 @@ body {
     border-color: #ff5e78;
     box-shadow: 0 0 20px rgba(255, 94, 120, 0.3);
     transform: scale(1.02);
+}
+
+.heart-burst {
+    position: relative;
 }
 
 .input-group input:focus + .heart-burst::after {
@@ -471,6 +478,21 @@ body {
     text-align: center;
     width: 90%;
     max-width: 600px;
+    position: relative;
+}
+
+.escape-message {
+    margin-top: 40px;
+    font-size: 18px;
+    color: #ff5e78;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.escape-message.show {
+    opacity: 1;
 }
 
 .question-text {
