@@ -483,10 +483,14 @@ function downloadCertificate() {
 function changeScene(currentSceneId, nextSceneId) {
     const currentScene = document.getElementById(currentSceneId);
     const nextScene = document.getElementById(nextSceneId);
-    
-    currentScene.classList.remove('active');
+    if (!currentScene || !nextScene) return;
+
+    // Show the next scene immediately so there is no invisible gap,
+    // then fade out the current scene after the transition delay.
+    nextScene.classList.add('active');
+
     setTimeout(() => {
-        nextScene.classList.add('active');
+        currentScene.classList.remove('active');
     }, 300);
 }
 
