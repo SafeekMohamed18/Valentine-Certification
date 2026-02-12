@@ -429,12 +429,12 @@ function generateCertificate() {
     // Date
     ctx.font = '20px serif';
     ctx.fillStyle = '#999';
-    const valentinesDate = new Date(2026, 1, 14).toLocaleDateString('en-US', { 
+    const currentDate = new Date().toLocaleDateString('en-US', { 
         year: 'numeric', 
         month: 'long', 
         day: 'numeric' 
     });
-    ctx.fillText(valentinesDate, 400, 530);
+    ctx.fillText(currentDate, 400, 530);
     
     // Decorative hearts
     ctx.font = '40px serif';
